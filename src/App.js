@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Body from "./Components/Body";
+import Header from "./Components/Header";
+import About from "./Components/About";
+import Menu from "./Components/Menu";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Error from "./Components/Error";
+import Contact from "./Components/Contact";
+import React, { Suspense, lazy } from "react";
+import UserContext from "./utils/UserContext";
+import Cart from "./Components/Cart";
+
+//lazy loading
+const GroceryComp = lazy(() => import("./Components/Grocery"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UserContext.Provider value={{ loggedInUser: "Archita" }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/grocery"
+            element={
+              <Suspense fallback={<h1>Loading</h1>}>
+                <GroceryComp />
+              </Suspense>
+            }
+          />
+          <Route path="/restaurant/:resId" element={<Menu />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </UserContext.Provider>
+    </>
   );
 }
 

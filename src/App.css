@@ -1,38 +1,103 @@
 .App {
-  text-align: center;
+}
+.image {
+  width: 100px;
+  margin-left: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.nav-items > ul {
+  margin-top: 10px;
+  display: flex;
+  list-style-type: none;
+}
+.nav-items > ul > li {
+  margin: 24px;
+  font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  width: 200px;
+  /* height: 300px; */
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin: 20px;
+}
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card:hover {
+  border: solid black;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img {
+  width: 100%;
+  border-radius: 10px;
+  height: 120px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 8px;
+}
+
+.cuisines {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px;
+  gap: 10px;
+}
+.shimmer-card {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin: 20px;
+}
+.search {
+  display: flex;
+  gap: 10px;
+}
+.menu {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu-name {
+  font-weight: 700;
+  font-size: large;
+}
+.menu-details {
+  color: gray;
+  font-size: medium;
+  font-weight: 500;
+}
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+/* .img-button {
+  Basic styling */
+/* background-color: black;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  left: 2rem;
+  transform: translateY(50%);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+} */
